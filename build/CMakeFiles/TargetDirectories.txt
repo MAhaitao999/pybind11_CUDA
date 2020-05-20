@@ -1,0 +1,3 @@
+/workspace/cmake/pybind11-cuda/build/CMakeFiles/rebuild_cache.dir
+/workspace/cmake/pybind11-cuda/build/CMakeFiles/gpu_library.dir
+/workspace/cmake/pybind11-cuda/build/CMakeFiles/edit_cache.dir

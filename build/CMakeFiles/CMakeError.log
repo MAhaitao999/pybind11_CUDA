@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /workspace/cmake/pybind11-cuda/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2b5fd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2b5fd.dir/build.make CMakeFiles/cmTC_2b5fd.dir/build
+make[1]: Entering directory '/workspace/cmake/pybind11-cuda/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2b5fd.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -fPIC    -o CMakeFiles/cmTC_2b5fd.dir/CheckSymbolExists.c.o   -c /workspace/cmake/pybind11-cuda/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_2b5fd
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b5fd.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC     CMakeFiles/cmTC_2b5fd.dir/CheckSymbolExists.c.o  -o cmTC_2b5fd 
+CMakeFiles/cmTC_2b5fd.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_2b5fd.dir/build.make:97: recipe for target 'cmTC_2b5fd' failed
+make[1]: *** [cmTC_2b5fd] Error 1
+make[1]: Leaving directory '/workspace/cmake/pybind11-cuda/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_2b5fd/fast' failed
+make: *** [cmTC_2b5fd/fast] Error 2
+
+File /workspace/cmake/pybind11-cuda/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /workspace/cmake/pybind11-cuda/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_45397/fast"
+/usr/bin/make -f CMakeFiles/cmTC_45397.dir/build.make CMakeFiles/cmTC_45397.dir/build
+make[1]: Entering directory '/workspace/cmake/pybind11-cuda/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_45397.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_45397.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.9/Modules/CheckFunctionExists.c
+Linking C executable cmTC_45397
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_45397.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_45397.dir/CheckFunctionExists.c.o  -o cmTC_45397 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_45397.dir/build.make:97: recipe for target 'cmTC_45397' failed
+make[1]: *** [cmTC_45397] Error 1
+make[1]: Leaving directory '/workspace/cmake/pybind11-cuda/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_45397/fast' failed
+make: *** [cmTC_45397/fast] Error 2
+
+
